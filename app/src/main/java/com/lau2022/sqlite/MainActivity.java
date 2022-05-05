@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
     ListView Lview;
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
+    String tutorials[]
+            = { "Mobile Computing", "Game Programing",
+            "Discrete Structures", "Algotithms and Data Structures"
+    };
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
