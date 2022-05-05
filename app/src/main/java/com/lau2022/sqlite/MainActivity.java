@@ -3,6 +3,7 @@ package com.lau2022.sqlite;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -73,11 +74,12 @@ public class MainActivity extends AppCompatActivity {
             SQLiteDatabase sql = this.openOrCreateDatabase("FinalExam", MODE_PRIVATE, null);
             sql.execSQL("CREATE Table IF NOT EXISTS courses (name VARCHAR)");
 
+            Cursor cursor = sql.rawQuery("Select * from courses", null);
+            int coursename = cursor.getColumnIndex("name");
+            cursor.moveToFirst();
 
 
-        }
-        catch (Exception e)
-        {
+        }catch(Exception e){
 
         }
     }
