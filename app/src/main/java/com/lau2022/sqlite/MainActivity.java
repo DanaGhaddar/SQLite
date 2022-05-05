@@ -2,7 +2,12 @@ package com.lau2022.sqlite;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -14,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
     String tutorials[]
-            = { "Mobile Computing", "Game Programing",
+            = {"Mobile Computing", "Game Programing",
             "Discrete Structures", "Algorithms and Data Structures"};
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +33,36 @@ public class MainActivity extends AppCompatActivity {
         Listview.setAdapter(adapter);
 
 
-    }
+        Listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String selectedItem = (String) adapterView.getItemAtPosition(i);
+                Log.i(selectedItem, "Start");
+                if (selectedItem.equals("Mobile Computing")) {
+                    String URL = "https://www.javatpoint.com/mobile-computing";
+                    Intent intent = new Intent(getApplicationContext(), website.class);
+                    intent.putExtra("Url", URL);
+                    startActivity(intent);
+                }
+            }
 
 
+        });
+
+
+        try {
+
+            SQLiteDatabase sql = this.openOrCreateDatabase("FinalExam", MODE_PRIVATE, null);
+
+
+
+        }
+        catch ()
+        {
+
+        }
     }
+}
+
+
+
