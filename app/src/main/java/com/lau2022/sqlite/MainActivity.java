@@ -44,6 +44,24 @@ public class MainActivity extends AppCompatActivity {
                     intent.putExtra("Url", URL);
                     startActivity(intent);
                 }
+                if (selectedItem.equals("Game Programing")) {
+                    String URL = "https://www.freecodecamp.org/news/game-development-for-beginners-unity-course/";
+                    Intent intent = new Intent(getApplicationContext(), website.class);
+                    intent.putExtra("Url", URL);
+                    startActivity(intent);
+                }
+                if (selectedItem.equals("Discrete Structures")) {
+                    String URL = "https://www.tutorialspoint.com/discrete_mathematics/index.htm";
+                    Intent intent = new Intent(getApplicationContext(), website.class);
+                    intent.putExtra("Url", URL);
+                    startActivity(intent);
+                }
+                if (selectedItem.equals("Algorithms and Data Structures")) {
+                    String URL = "https://www.geeksforgeeks.org/data-structures/";
+                    Intent intent = new Intent(getApplicationContext(), website.class);
+                    intent.putExtra("Url", URL);
+                    startActivity(intent);
+                }
             }
 
 
@@ -57,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
-        catch ()
+        catch (Exception e)
         {
 
         }
