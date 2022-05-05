@@ -15,18 +15,20 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
     String tutorials[]
             = { "Mobile Computing", "Game Programing",
-            "Discrete Structures", "Algotithms and Data Structures"
-    };
+            "Discrete Structures", "Algorithms and Data Structures"};
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Listview = (ListView) findViewById(R.id.list);
         arrayList = new ArrayList<>();
-        adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
+        adapter = new ArrayAdapter<String>(this,
+                R.layout.support_simple_spinner_dropdown_item,
+                tutorials);
         Listview.setAdapter(adapter);
 
 
+    }
+
 
     }
-}
