@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -77,6 +78,15 @@ public class MainActivity extends AppCompatActivity {
             Cursor cursor = sql.rawQuery("Select * from courses", null);
             int coursename = cursor.getColumnIndex("name");
             cursor.moveToFirst();
+
+            while (cursor != null) {
+                String name = "        " +cursor.getString(coursename) + " " ;
+                arrayList.add(name);
+                Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
+                cursor.moveToNext();
+            }
+
+
 
 
         }catch(Exception e){
