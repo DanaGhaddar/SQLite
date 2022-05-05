@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
             while (cursor != null) {
                 String name = "        " +cursor.getString(coursename) + " " ;
                 arrayList.add(name);
-                Toast.makeText(getApplicationContext(), name, Toast.LENGTH_LONG).show();
                 cursor.moveToNext();
             }
 
