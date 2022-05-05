@@ -89,7 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        }catch(Exception e){
+        }catch(Exception e)
+        {
+            e.printStackTrace();
 
         }
     }
