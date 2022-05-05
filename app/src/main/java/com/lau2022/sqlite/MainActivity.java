@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    ListView Lview;
+    ListView Listview;
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
     String tutorials[]
@@ -21,10 +21,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Lview = (ListView) findViewById(R.id.list);
+        Listview = (ListView) findViewById(R.id.list);
         arrayList = new ArrayList<>();
         adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, arrayList);
-        Lview.setAdapter(adapter);
+        Listview.setAdapter(adapter);
 
 
 
