@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             SQLiteDatabase sql = this.openOrCreateDatabase("FinalExam", MODE_PRIVATE, null);
+            sql.execSQL("CREATE Table IF NOT EXISTS courses (name VARCHAR)");
 
 
 
